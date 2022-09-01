@@ -1,0 +1,117 @@
+$spacing: 1em;
+
+input, button {
+    padding: $spacing;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+button {
+    background-color: #f9f9f9
+}
+
+.warn, .warning {
+    background: #cc0000;
+    padding: $spacing;
+    color: white;
+    margin-bottom: $spacing * 2;
+    display: none;
+}
+
+.best {
+    background: gold;
+
+    & .heading {
+        position: relative;
+
+        &:before {
+            content: '';
+            background: url(http://www.zerouplab.com/close/images/best-value.png) top left / contain no-repeat;
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            left: calc(100% - 34px);
+        }
+    }
+}
+
+.pizzaApp {
+    max-width: 1000px;
+    margin: 0 auto;
+    counter-reset: mycounter;
+}
+
+.pizza {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-bottom: $spacing;
+    padding: $spacing;
+
+    & * {
+        flex: 1 1 auto;
+        margin-bottom: $spacing;
+    }
+
+    & .heading {
+        margin-top: 0;
+        margin-bottom: $spacing;
+
+        &:after {
+            content: counter(mycounter);
+            counter-increment: mycounter;
+        }
+    }
+}
+
+#calculate {
+    width: 100%;
+    margin-top: $spacing;
+}
+
+@media (min-width: 600px) {
+    .pizza {
+        flex-direction: row;
+
+        & * {
+            margin-bottom: 0;
+
+            &:not(:first-child) {
+                margin-left: $spacing;
+            }
+        }
+
+        & .heading {
+            margin-bottom: 0;
+        }
+    }
+}
+
+label {
+    position: relative;
+    display: flex;
+}
+
+.placeholder {
+    padding: 10px;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: .25em;
+    transition: 0.2s;
+    transition-timing-function: ease;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    opacity: 0.5;
+    font-size: .75em;
+}
+
+input {
+    padding: 10px;
+}
+
+input:focus + .placeholder, input:not(:placeholder-shown) + .placeholder {
+    opacity: 1;
+    transform: scale(0.75) translateY(-100%) translateX(-30px);
+}
+
