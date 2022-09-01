@@ -1,17 +1,31 @@
 <div class="pizzaApp">
-    <h1>
-        Pizza Calculator!!!
-    </h1>
-    <div class="warn">
+    <h1>Pizza Calculator!!!</h1>
+
+    <div *ngIf="hasWarnings" class="warn" style="display: block;">
         Please enter correct values
     </div>
+
     <div class="pizzas">
-        <!-- notice the empty space here... -->
+        <div *ngFor="let pizza of allPizzas; index as i" class="pizza"
+             [class.best]="i === bestIndex" [class.warning]="warnings[i]">
+
+            <h2 class="heading">
+                <span>Pizza {{i + 1}}</span>
+            </h2>
+            <label>
+                <input type="text" name="diameter" placeholder=" " [(ngModel)]="pizza.diameter" />
+                <span class="placeholder">Diameter (inches)</span>
+            </label>
+            <label>
+                <input type="text" name="price" placeholder=" " [(ngModel)]="pizza.price" />
+                <span class="placeholder">Price</span>
+            </label>
+            <button class="remove" (click)="removePizza(i)">Remove</button>
+        </div>
     </div>
-    <button id="add">
-        Add Pizza
-    </button>
-    <button id="calculate">
-        Calculate Best Values
-    </button>
+
+    <button id="add" (click)="addPizza()">Add Pizza</button>
+    <button id="calculate" (click)="calculateValue()">Calculate Best Values</button>
+
+    <div class="source-blurb">Source: <a href="https://github.com/jalbr74/pizza-calculator.git">https://github.com/jalbr74/pizza-calculator.git</a></div>
 </div>

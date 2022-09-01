@@ -59,8 +59,8 @@ button {
         margin-bottom: $spacing;
 
         &:after {
-            content: counter(mycounter);
-            counter-increment: mycounter;
+            //content: counter(mycounter);
+            //counter-increment: mycounter;
         }
     }
 }
@@ -115,3 +115,6 @@ input:focus + .placeholder, input:not(:placeholder-shown) + .placeholder {
     transform: scale(0.75) translateY(-100%) translateX(-30px);
 }
 
+.source-blurb {
+    margin-top: 35px;
+}

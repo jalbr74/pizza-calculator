@@ -1,27 +1,20 @@
-# PizzaCalculator
+# Pizza Calculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
+This project was copied from: https://codepen.io/drewcurley/pen/PoeYVrJ
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### The Task
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Create a pizza calculator app that is mobile and desktop friendly.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Criteria
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* For any number of pizzas (the user can add more), there will be a label (e.g. pizza 1), and the user should input a diameter and a price.
+* If the user inputs invalid data, the program should let them know.
+* The user should be able to remove any pizzas on screen.
+* The pizzas should automatically increment their label, and that label should decrease when pizzas are removed.
+* When a calculate button is pressed, the app should determine which pizza is the best value and distinguish it as such.
+* If a best value is determined, and another pizza is added, the best value indicator should be removed automatically.  
