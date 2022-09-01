@@ -6,7 +6,8 @@
         "start": "ng serve",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
-        "test": "ng test"
+        "test": "ng test",
+        "push-to-gh-pages": "npx push-dir --dir=dist/pizza-calculator --branch=gh-pages --cleanup"
     },
     "private": true,
     "dependencies": {
